@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "member")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Member extends BaseTimeEntity{
+public class Member extends BaseEntity{
 
     @Id
     @Column(name = "member_id")
@@ -38,7 +38,6 @@ public class Member extends BaseTimeEntity{
         this.password = password;
         this.role = role;
     }
-
 
     public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder){
         return new Member(
